@@ -12,7 +12,7 @@ reading mail, or working on a task).  Whenever you stop doing an activity
 something else), type the name of the activity into the gtimelog prompt.
 
 Try to use the same text if you make several entries for an activity.
-History helps here -- type a prefix and then use the
+History helps here -- type a part of the activity text and then use the
 PageUp/PageDown keys to choose the appropriate task.
 
 They key principle here is to name the activity after you've

@@ -6,6 +6,10 @@ Changelog
 
 - Use a better workaround for window.present() not working on Wayland.
 
+- Make it easier to find the matching previously used activity by suggesting
+  all entries that contain the currently entered search text anywhere (full
+  text search) not only those starting with it (prefix search).
+
 
 0.11.2 (2018-11-03)
 ~~~~~~~~~~~~~~~~~~~
