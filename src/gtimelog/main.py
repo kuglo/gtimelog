@@ -1348,6 +1348,14 @@ class Window(Gtk.ApplicationWindow):
         return True
 
 
+# finds all entries containing the filter_text anywhere
+def match_substring(completion, key, iter, column):
+    model = completion.get_model()
+    text = model.get_value(iter, column)
+    normalized = GLib.utf8_normalize(text, -1, GLib.NormalizeMode.DEFAULT)
+    return normalized.lower().find(key.lower()) != -1
+
+
 class TaskEntry(Gtk.Entry):
 
     timelog = GObject.Property(
@@ -1383,6 +1391,7 @@ class TaskEntry(Gtk.Entry):
         self.completion_choices_as_set = set()
         completion.set_model(self.completion_choices)
         completion.set_text_column(0)
+        completion.set_match_func(match_substring, 0)
         if self.gtk_completion_enabled:
             self.set_completion(completion)
 
